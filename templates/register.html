@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>加入我们</title>
+{% endblock %}
+{% block content %}
+  <h1>注册</h1>
+
+  {% if form.errors %}
+    <p style="color: red;">
+      请检查您的输入{{ form.errors|pluralize }} .
+    </p>
+  {% endif %}
+  {% for item in error %}
+    <p style="color:red;">{{item}}</p>
+  {% endfor %}
+      
+  <form action="" method="post">
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="注册">
+  </form>
+{% endblock %}

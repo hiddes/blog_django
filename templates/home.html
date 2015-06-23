@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 style="text-align: center">我们的博客</h3>
+{#<a href = '/blog/'>博客</a><br>#}
+{% for blog in blogs %}
+<div class="wz" >
+    <h3>标题：{{ blog.title }}标签：{{ blog.tag }}</h3>
+    <dd>
+        <p class="dd_text_1">描述：{{ blog.desc }}</p>
+    </dd>
+    <p>发布时间：{{ blog.timestamp }}      作者:{{ blog.autor }}</p>
+    <p><a href = " /blog/{{blog.id}}">查看详情...</a></p>
+</div>
+{% endfor %}
+
+{% endblock content %}

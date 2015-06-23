@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%}
+<title>公共信箱</title>
+{% endblock %}
+{% block content %}
+<h2 style="text-align: center">有事儿，您说话！！！</h2>
+{% for bl in li %}
+
+<p>
+{#    {% if b1.0 %}#}
+    {{ bl.fromuser }}
+{#    {% else %} 路人甲#}
+{#    {% endif %}#}
+    对
+{#    {% if b1.2 %}#}
+    {{ bl.touser }}
+{#    {% else %}路人乙#}
+{#    {% endif %}#}
+    说：</p>
+<p>     {{ bl.text }}</p>
+{% endfor %}
+{% endblock %}ao

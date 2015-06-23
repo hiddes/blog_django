@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{ user.username }}的博客 </title>
+{% endblock title %}
+{% block content %}
+    <h1>登录成功 {{user.username}}!</h1>
+    <h3>您可以进行如下操作</h3>
+    <div>
+     <a href="/chpwd">更改密码</a>
+     <a href="/logout">登出</a>
+    </div>
+{% endblock %}

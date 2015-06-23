@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{ body.title }}</title>
+{% endblock %}
+{% block content %}
+<h2 align="center">{{ body.title }}</h2>
+<div style="text-align: center">
+    <p>描述：{{ body.desc }}</p>
+    <p>正文：{{ body.text }}</p>
+    <p>标签：{{ body.tag }}           作者：{{ body.autor }}</p>
+    <p>发布时间：{{ body.timestamp }}</p>
+</div>
+{% endblock %}

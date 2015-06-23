@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{ name }}的博客}</title>
+{% endblock %}
+
+{% block content %}
+    <h3 style="text-align: left">我的博客列表:</h3>
+{% for blog in blogs %}
+<div style="text-align: center">
+    <p>标题：{{ blog.title }}</p>
+    <p>标签：{{ blog.tag }}</p>
+    <p>描述：{{ blog.desc }}</p>
+    <p>发布时间：{{ blog.timestamp }}</p>
+    <p>id:{{ blog.id }}</p>
+    <p><a href = " /blog/{{blog.id}}">内容...</a></p>
+{#    <p><a href="{%   url 'blog.views.view_blog ' id=blog.id %}">详细...</a></p>#}
+</div>
+{% endfor %}
+{% endblock %}

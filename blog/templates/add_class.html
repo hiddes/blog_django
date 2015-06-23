@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>分类</title>
+</head>
+<body>
+<h1 content="center">添加分类</h1>
+{% for item in mess %}
+<p style="color: red">{{ item }}</p>
+{% endfor %}
+<form action="" method="post">
+    {{ form.as_table }}
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

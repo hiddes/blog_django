@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+  <title>登录</title>
+{% endblock %}
+{% block content %}
+  <script type="text/javascript">
+
+  function register() {
+    window.location.href = '/register'
+  }
+</script>
+
+  <h1>登录</h1>
+  {% for item in error %}
+    <p style="color:red;">{{item}}</p>
+  {% endfor %}
+
+  <form action="" method="post">
+    <table>
+      {{ form.as_table }}
+    </table>
+{#      {% csrf_token %}#}
+    <input type="submit" value="登录">
+    <input type="button" value ="注册" onclick="register()">
+  </form>
+{% endblock %}

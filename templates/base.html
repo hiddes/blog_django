@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+    {% block title %}
+    <title>博客</title>
+    {% endblock %}
+<meta name="keywords" content="博客" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/style.css'%}"/>
+<script type="text/javascript" src="{% static 'js/jquery1.42.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js'%}"></script>
+<!--[if lt IE 9]>
+<script src="{% static 'js/html5.js'%}"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!--header start-->
+    <div id="header">
+      <h1>默影</h1>
+      <p>坚定地信念让我坚定不移的走下去，明天只会更加美好。
+          {% if loged %}
+              <a href="/logout">退出登录</a>
+              <a href="/chpwd">更改密码</a>
+          {% else %}
+              <a href = '/login'>登录</a>   <a href = '/register'>注册</a>
+          {% endif %}
+      </p>
+    </div>
+     <!--header end-->
+    <!--nav-->
+     <div id="nav">
+        <ul>
+         <li><a href="/">首页</a></li>
+            {% if loged %}
+         <li><a href="/blog">个人主页</a></li>
+         <li><a href="/blog/edit">写博客</a></li>
+         <li><a href="/blog/editinfo">个人信息</a></li>
+         <li><a href="/blog/addtag">添加标签</a></li>
+            {% endif %}
+         <li><a href="/blog/messbox">留言板</a></li>
+         <li><a href="/blog/showbox">公共信箱</a></li>
+         <div class="clear"></div>
+        </ul>
+      </div>
+       <!--nav end-->
+    <!--content start-->
+    <div id="content">
+        <div class="left" id="c_left">
+            <div class="s_tuijian">
+            <h2>文章<span>推荐</span></h2>
+           </div>
+            <div class="content_text">
+                <div class="wz">
+                {% block content %}
+                {% endblock %}
+                    <div class="clear"></div>
+                </div>
+            </div>
+         </div>
+         <!--left end-->
+            <!--right-->
+         <div class="right" id="c_right">
+
+           <!--end-->
+           <div class="link">
+            <h2>友情链接</h2>
+            <p><a href="http://www.maiziedu.com">麦子学院</a></p>
+           </div>
+         </div>
+         <!--right end-->
+         <div class="clear"></div>
+    </div>
+    <!--content end-->
+    <!--footer start-->
+    <div id="footer">
+     <p>Design by:<a href="/" target="_blank">默影</a> 2015-6-9</p>
+    </div>
+    <!--footer end-->
+    <script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+    <script  type="text/javascript" src="{% static 'js/nav.js'%}"></script>
+</body>
+</html>
